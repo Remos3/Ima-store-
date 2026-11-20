@@ -1,14 +1,21 @@
-/* style.css - IMA Store Streetwear Styling */
+/* style.css - IMA Store Modern D2C Fashion UI */
+
+:root {
+  --brand-red: #D90429;
+  --ink: #111111;
+  --muted: #6b7280;
+  --surface: #f5f5f7;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #0b0b0c;
-  color: #f8f9fa;
-  padding-bottom: 70px; /* Space for mobile bottom nav */
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: var(--ink);
+  padding-bottom: 72px;
 }
 
 @media (min-width: 768px) {
@@ -17,7 +24,11 @@ body {
   }
 }
 
-/* Hide scrollbars for horizontal category pills */
+.font-display {
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hide Scrollbars */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -26,7 +37,7 @@ body {
   scrollbar-width: none;
 }
 
-/* Offer Marquee Animation */
+/* Smooth Ticker */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -35,34 +46,26 @@ body {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 22s linear infinite;
+  animation: marquee 26s linear infinite;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+/* Instagram Story Ring */
+.story-ring {
+  padding: 2.5px;
+  background: linear-gradient(135deg, #D90429 0%, #111111 100%);
+  border-radius: 9999px;
 }
 
-/* Product Card Hover */
-.product-card img {
-  transition: transform 0.35s ease;
+/* Clean Fashion Card Hover */
+.fashion-card img {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
+.fashion-card:hover img {
+  transform: scale(1.06);
 }
 
-/* Cart Drawer Transition */
+/* Cart Drawer Open State */
 .drawer-open {
   transform: translateX(0) !important;
-}
-
-/* Brand Red Glow */
-.btn-brand {
-  background-color: #D90429;
-  transition: all 0.2s ease;
-}
-
-.btn-brand:hover {
-  background-color: #ef233c;
-  box-shadow: 0 0 18px rgba(217, 4, 41, 0.45);
 }
