@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMA STORE | Manipur's Streetwear, Winterwear & Watches</title>
+  <meta name="description" content="IMA Store Khurai, Manipur. Shop Jackets, Hoodies, Watches, Baggy Pants & Kroks. COD & Home Delivery Available. Open Mon–Sun." />
+
+  <!-- Open Graph for WhatsApp / Instagram Link Preview -->
+  <meta property="og:title" content="IMA STORE — Khurai, Manipur" />
+  <meta property="og:description" content="Streetwear, Winterwear, Watches & Kroks. COD & Home Delivery Available across Manipur." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="antialiased selection:bg-[#D90429] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#D90429] text-white text-xs font-semibold py-2 px-4 text-center tracking-wide">
+    <span><i class="fa-solid fa-truck-fast mr-1"></i> COD & Home Delivery Available</span>
+    <span class="mx-2 opacity-60">|</span>
+    <span><i class="fa-solid fa-bolt mr-1"></i> Open Mon – Sun (Khurai, Manipur)</span>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-40 bg-[#0b0b0c]/95 backdrop-blur border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-full bg-[#D90429] flex items-center justify-center font-black text-white text-lg border-2 border-white shadow">
+          M
+        </div>
+        <div class="leading-tight">
+          <span class="block font-black text-base tracking-wider text-white">IMA STORE</span>
+          <span class="block text-[10px] text-zinc-400 uppercase tracking-widest">Khurai • Manipur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
+        <a href="#home" class="hover:text-white transition">Home</a>
+        <a href="#shop" class="hover:text-white transition">Shop All</a>
+        <a href="#offers" class="hover:text-[#ef233c] transition">Offers & BOGO</a>
+        <a href="#reviews" class="hover:text-white transition">Reviews</a>
+        <a href="#location" class="hover:text-white transition">Store Location</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="admin.html" title="Demo Admin Panel" class="text-xs bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 px-2.5 py-1.5 rounded-lg transition">
+          <i class="fa-solid fa-sliders mr-1"></i><span class="hidden sm:inline">Admin</span>
+        </a>
+        <button onclick="openCart()" class="relative bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white px-3 py-2 rounded-lg flex items-center gap-2 transition">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="text-xs font-bold hidden sm:inline">Cart</span>
+          <span id="navCartCount" class="absolute -top-2 -right-2 bg-[#D90429] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden border-b border-zinc-800">
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/50 z-10"></div>
+    <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1400&q=80" alt="IMA Store Streetwear" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 py-14 sm:py-20">
+      <div class="max-w-xl">
+        <span class="inline-flex items-center gap-2 bg-[#D90429]/20 border border-[#D90429] text-[#ff4d6d] text-xs font-bold px-3 py-1 rounded-full mb-4">
+          <i class="fa-brands fa-instagram"></i> 39.3K+ Manipur Fashion Community
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-4">
+          STREETWEAR, WINTER DROPS & <span class="text-[#D90429]">BOGO DEALS</span>
+        </h1>
+        <p class="text-zinc-300 text-sm sm:text-base mb-7 leading-relaxed">
+          Puffer Jackets, Boxy Hoodies, Luxury Watches, Baggy Pants & Kroks. Order directly on WhatsApp with fast <strong>Cash on Delivery</strong> across Manipur.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#shop" class="btn-brand text-white font-bold px-6 py-3 rounded-xl text-sm flex items-center gap-2">
+            Shop Collection <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/916009559821?text=Hi%20IMA%20Store!%20I%20want%20to%20see%20today's%20new%20arrivals." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl text-sm flex items-center gap-2 transition">
+            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Order
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moving Offer Strip -->
+  <div class="bg-zinc-900 border-b border-zinc-800 py-2.5 overflow-hidden">
+    <div class="marquee-track text-xs font-bold uppercase tracking-widest text-zinc-200 gap-10">
+      <span>🔥 FESTIVAL OFFER LIVE</span>
+      <span>•</span>
+      <span class="text-[#ff4d6d]">⌚ BUY 1 GET 1 ON LADIES WATCHES</span>
+      <span>•</span>
+      <span>🚚 CASH ON DELIVERY AVAILABLE</span>
+      <span>•</span>
+      <span>🧥 NEW WINTER JACKETS & HOODIES IN STOCK</span>
+      <span>•</span>
+      <span>📍 KHURAI SAJOR LEIKAI, OPP. LAMLONG OIL PUMP</span>
+      <span>•</span>
+      <span>🔥 FESTIVAL OFFER LIVE</span>
+      <span>•</span>
+      <span class="text-[#ff4d6d]">⌚ BUY 1 GET 1 ON LADIES WATCHES</span>
+      <span>•</span>
+      <span>🚚 CASH ON DELIVERY AVAILABLE</span>
+    </div>
+  </div>
+
+  <!-- Trust Highlights -->
+  <section class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-2xl flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#D90429]/15 text-[#D90429] flex items-center justify-center text-lg">
+          <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-xs sm:text-sm text-white">COD Available</h3>
+          <p class="text-[11px] text-zinc-400">Pay at your doorstep</p>
+        </div>
+      </div>
+      <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-2xl flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#D90429]/15 text-[#D90429] flex items-center justify-center text-lg">
+          <i class="fa-solid fa-store"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-xs sm:text-sm text-white">Physical Store</h3>
+          <p class="text-[11px] text-zinc-400">Khurai, Manipur</p>
+        </div>
+      </div>
+      <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-2xl flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#D90429]/15 text-[#D90429] flex items-center justify-center text-lg">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-xs sm:text-sm text-white">Open 7 Days</h3>
+          <p class="text-[11px] text-zinc-400">Mon – Sun Open</p>
+        </div>
+      </div>
+      <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-2xl flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#D90429]/15 text-[#D90429] flex items-center justify-center text-lg">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-xs sm:text-sm text-white">39.3K+ Trust</h3>
+          <p class="text-[11px] text-zinc-400">Top rated local store</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Shop / Catalog Section -->
+  <section id="shop" class="max-w-7xl mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white">SHOP COLLECTION</h2>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-1">Select your size & place COD order directly on WhatsApp.</p>
+      </div>
+
+      <!-- Search & Sort Controls -->
+      <div class="flex flex-col sm:flex-row gap-2.5 w-full md:w-auto">
+        <div class="relative flex-1 sm:w-64">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
+          <input id="searchInput" type="text" placeholder="Search bomber, watch, hoodie..." class="w-full bg-zinc-900 border border-zinc-800 focus:border-[#D90429] rounded-xl pl-9 pr-4 py-2.5 text-sm text-white outline-none" />
+        </div>
+        <select id="sortSelect" class="bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-sm text-zinc-200 outline-none focus:border-[#D90429]">
+          <option value="featured">Sort: Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div id="categoryTabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-4">
+      <button data-cat="All" class="cat-btn active bg-[#D90429] text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">All Items</button>
+      <button data-cat="Jackets" class="cat-btn bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Jackets</button>
+      <button data-cat="Hoodies" class="cat-btn bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Hoodies & Tops</button>
+      <button data-cat="Watches" class="cat-btn bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Watches</button>
+      <button data-cat="Bottoms" class="cat-btn bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Baggy Pants</button>
+      <button data-cat="Kroks" class="cat-btn bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Kroks (Footwear)</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+      <!-- Rendered dynamically by app.js -->
+    </div>
+  </section>
+
+  <!-- Special Offers & Combos Banner -->
+  <section id="offers" class="max-w-7xl mx-auto px-4 py-10">
+    <div class="bg-gradient-to-br from-[#D90429] via-[#9b031d] to-zinc-950 rounded-3xl p-6 sm:p-10 border border-red-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="max-w-lg">
+        <span class="bg-black/40 text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Limited Time Deal</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-white mt-3 mb-2">FESTIVAL & BOGO OFFERS</h2>
+        <p class="text-red-100 text-sm leading-relaxed">
+          Grab <strong>Buy 1 Get 1</strong> on selected Ladies Watches and flat festival discounts on Winter Jackets & Cardigans. Visit our Khurai store or book online for Home Delivery!
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+        <button onclick="filterByCategory('Watches')" class="bg-white text-black hover:bg-zinc-200 font-extrabold px-6 py-3.5 rounded-xl text-sm transition text-center">
+          View BOGO Watches
+        </button>
+        <a href="https://wa.me/916009559821?text=Hi%20IMA%20Store!%20Please%20share%20current%20Festival%20%26%20BOGO%20offers." target="_blank" class="bg-black/50 hover:bg-black/70 border border-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm transition text-center">
+          Ask on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 py-10">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-white">CUSTOMER REVIEWS</h2>
+        <p class="text-xs text-zinc-400">Real feedback from our Manipur shoppers</p>
+      </div>
+      <span class="text-xs font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3 py-1.5 rounded-full">
+        <i class="fa-solid fa-star"></i> 4.9 / 5 Rated
+      </span>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl">
+        <div class="text-amber-400 text-xs mb-2">★★★★★</div>
+        <p class="text-sm text-zinc-300 mb-4">"Ordered the Boxy Double Zipper Hoodie on WhatsApp. Got same-day COD delivery in Imphal. Fabric quality is crazy good for this price!"</p>
+        <div class="text-xs font-bold text-white">— Rohit M., Imphal East</div>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl">
+        <div class="text-amber-400 text-xs mb-2">★★★★★</div>
+        <p class="text-sm text-zinc-300 mb-4">"Bought 2 watches under the Buy 1 Get 1 offer. Looks super premium and arrived neatly packed. Definitely shopping again."</p>
+        <div class="text-xs font-bold text-white">— Linthoi S., Khurai</div>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl">
+        <div class="text-amber-400 text-xs mb-2">★★★★★</div>
+        <p class="text-sm text-zinc-300 mb-4">"Best store near Lamlong for streetwear jackets and Kroks. Staff is very friendly and prices are always pocket-friendly."</p>
+        <div class="text-xs font-bold text-white">— Biken K., Lamphel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Location & Footer -->
+  <footer id="location" class="bg-zinc-950 border-t border-zinc-800 mt-10">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-full bg-[#D90429] flex items-center justify-center font-black text-white text-xl border-2 border-white">M</div>
+          <div>
+            <h3 class="font-black text-xl text-white">IMA STORE</h3>
+            <p class="text-xs text-zinc-400">@ima_store_khurai • Ima_manipur_store</p>
+          </div>
+        </div>
+        <ul class="space-y-3 text-sm text-zinc-300 mb-6">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot text-[#D90429] mt-1"></i>
+            <span>Khurai Sajor Leikai, Opp. Lamlong Oil Pump, Imphal, Manipur</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-[#D90429]"></i>
+            <a href="tel:+916009559821" class="hover:text-white font-semibold">+91 6009559821</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-clock text-[#D90429]"></i>
+            <span>Open Mon – Sun • COD & Home Delivery Available</span>
+          </li>
+        </ul>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="https://wa.me/916009559821" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+          </a>
+          <a href="https://instagram.com/ima_store_khurai" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2">
+            <i class="fa-brands fa-instagram text-sm"></i> Instagram
+          </a>
+          <a href="#" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2">
+            <i class="fa-brands fa-facebook text-sm"></i> Roni Thangz
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Map Embed (Lamlong / Khurai, Imphal) -->
+      <div class="rounded-2xl overflow-hidden border border-zinc-800 h-64 bg-zinc-900">
+        <iframe
+          title="IMA Store Khurai Location"
+          src="https://www.google.com/maps?q=Khurai+Sajor+Leikai+Lamlong+Imphal+Manipur&output=embed"
+          class="w-full h-full border-0 grayscale invert contrast-125 opacity-85"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="border-t border-zinc-900 py-4 text-center text-xs text-zinc-500">
+      © 2026 IMA Store Khurai, Manipur. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Product Quick View Modal -->
+  <div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/70 text-white hover:bg-[#D90429] flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Slide-Out Cart & COD Checkout Drawer -->
+  <div id="cartOverlay" onclick="closeCart()" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-zinc-950 border-l border-zinc-800 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 border-b border-zinc-800 flex items-center justify-between">
+      <h3 class="font-black text-lg text-white flex items-center gap-2">
+        <i class="fa-solid fa-bag-shopping text-[#D90429]"></i> Your Cart
+      </h3>
+      <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items List -->
+    <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+
+    <!-- COD Checkout Form -->
+    <div id="checkoutSection" class="border-t border-zinc-800 p-4 bg-zinc-900/60 space-y-3">
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-zinc-400">Subtotal (COD Eligible)</span>
+        <span id="cartTotal" class="text-xl font-black text-white">₹0</span>
+      </div>
+
+      <form id="checkoutForm" class="space-y-2.5">
+        <input type="text" id="custName" required placeholder="Your Full Name *" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none focus:border-[#D90429]" />
+        <input type="tel" id="custPhone" required placeholder="Phone / WhatsApp Number *" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none focus:border-[#D90429]" />
+        <textarea id="custAddress" rows="2" required placeholder="Full Delivery Address (Locality, Landmark, Imphal/Manipur) *" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3.5 py-2 text-xs text-white outline-none focus:border-[#D90429]"></textarea>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-xs cu
