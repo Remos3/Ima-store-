@@ -1,0 +1,68 @@
+/* style.css - IMA Store Streetwear Styling */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0b0b0c;
+  color: #f8f9fa;
+  padding-bottom: 70px; /* Space for mobile bottom nav */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Hide scrollbars for horizontal category pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Offer Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Product Card Hover */
+.product-card img {
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Cart Drawer Transition */
+.drawer-open {
+  transform: translateX(0) !important;
+}
+
+/* Brand Red Glow */
+.btn-brand {
+  background-color: #D90429;
+  transition: all 0.2s ease;
+}
+
+.btn-brand:hover {
+  background-color: #ef233c;
+  box-shadow: 0 0 18px rgba(217, 4, 41, 0.45);
+}
