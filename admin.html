@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMA STORE | Admin Panel (Demo)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-[#0b0b0c] text-zinc-100 min-h-screen font-sans">
+
+  <header class="bg-zinc-950 border-b border-zinc-800 px-4 py-4">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-[#D90429] flex items-center justify-center font-black text-white">M</div>
+        <div>
+          <h1 class="font-black text-base">IMA STORE — ADMIN DEMO</h1>
+          <p class="text-[11px] text-zinc-400">Changes sync live to your demo storefront</p>
+        </div>
+      </div>
+      <a href="index.html" class="bg-zinc-800 hover:bg-zinc-700 text-xs font-bold px-4 py-2 rounded-xl">
+        <i class="fa-solid fa-arrow-left mr-1"></i> View Store
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 grid lg:grid-cols-3 gap-6">
+    <!-- Add New Product Form -->
+    <section class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 h-fit">
+      <h2 class="font-bold text-base mb-4 text-white"><i class="fa-solid fa-plus text-[#D90429] mr-2"></i>Add New Product</h2>
+      <form id="addForm" class="space-y-3 text-xs">
+        <input id="pName" required placeholder="Product Name (e.g. Suede Jacket)" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none focus:border-[#D90429]" />
+        <select id="pCat" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none">
+          <option value="Jackets">Jackets</option>
+          <option value="Hoodies">Hoodies</option>
+          <option value="Watches">Watches</option>
+          <option value="Bottoms">Bottoms</option>
+          <option value="Kroks">Kroks</option>
+        </select>
+        <div class="grid grid-cols-2 gap-2">
+          <input id="pPrice" type="number" required placeholder="Offer Price (₹)" class="bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none" />
+          <input id="pOldPrice" type="number" placeholder="MRP / Old Price (₹)" class="bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none" />
+        </div>
+        <input id="pBadge" placeholder="Badge (e.g. NEW, BOGO, SALE)" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none" />
+        <input id="pSizes" value="M, L, XL" placeholder="Sizes (comma separated)" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none" />
+        <input id="pImage" placeholder="Image URL (leave empty for default)" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-white outline-none" />
+        <textarea id="pDesc" rows="2" placeholder="Short description..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white outline-none"></textarea>
+        <button type="submit" class="w-full bg-[#D90429] hover:bg-[#ef233c] text-white font-bold py-3 rounded-xl transition">
+          Save Product to Store
+        </button>
+      </form>
+    </section>
+
+    <!-- Existing Products List -->
+    <section class="lg:col-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold text-base text-white">Manage Inventory (<span id="totalCount">0</span>)</h2>
+        <button onclick="resetDemoData()" class="text-[11px] text-zinc-400 hover:text-white underline">Reset Demo Products</button>
+      </div>
+      <div id="adminList" class="space-y-3"></div>
+    </section>
+  </main>
+
+  <script src="products.js"></script>
+  <script>
+    let items = getProducts();
+
+    function renderAdminList() {
+      document.getElementById("totalCount").textContent = items.length;
+      const list = document.getElementById("adminList");
+
+      list.innerHTML = items
+        .map(
+          (p) => `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-zinc-950 border border-zinc-800 p-3 rounded-xl">
+          <div class="flex items-center gap-3">
+            <img src="${p.image}" class="w-12 h-12 rounded-lg object-cover" />
+            <div>
+              <h4 class="font-bold text-xs text-white">${p.name}</h4>
+              <p class="text-[11px] text-zinc-400">${p.category} • <strong class="text-white">₹${p.price}</strong></p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="toggleStock(${p.id})" class="px-3 py-1.5 rounded-lg text-[11px] font-bold ${
+            p.inStock
+              ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+              : "bg-amber-500/15 text-amber-400 border border-amber-500/30"
+          }">
+              ${p.inStock ? "In Stock" : "Out of Stock"}
+            </button>
+            <button onclick="deleteItem(${p.id})" class="px-2.5 py-1.5 rounded-lg bg-red-500/15 text-red-400 hover:bg-red-500 hover:text-white text-xs transition">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>`
+        )
+        .join("");
+    }
+
+    document.getElementById("addForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newProduct = {
+        id: Date.now(),
+        name: document.getElementById("pName").value.trim(),
+        category: document.getElementById("pCat").value,
+        price: Number(document.getElementById("pPrice").value),
+        oldPrice: Number(document.getElementById("pOldPrice").value) || 0,
+        badge: document.getElementById("pBadge").value.trim().toUpperCase(),
+        sizes: document.getElementById("pSizes").value.split(",").map((s) => s.trim()).filter(Boolean),
+        inStock: true,
+        image:
+          document.getElementById("pImage").value.trim() ||
+          "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80",
+        desc: document.getElementById("pDesc").value.trim() || "Premium streetwear collection from IMA Store Khurai."
+      };
+
+      items.unshift(newProduct);
+      saveProducts(items);
+      renderAdminList();
+      e.target.reset();
+      alert("Product added! Open index.html to see it live.");
+    });
+
+    function toggleStock(id) {
+      const target = items.find((p) => p.id === id);
+      if (target) {
+        target.inStock = !target.inStock;
+        saveProducts(items);
+        renderAdminList();
+      }
+    }
+
+    function deleteItem(id) {
+      if (!confirm("Delete this product?")) return;
+      items = items.filter((p) => p.id !== id);
+      saveProducts(items);
+      renderAdminList();
+    }
+
+    function resetDemoData() {
+      if (!confirm("Reset to default IMA Store demo products?")) return;
+      localStorage.removeItem("ima_store_products");
+      items = getProducts();
+      renderAdminList();
+    }
+
+    renderAdminList();
+  </script>
+</body>
+</html>
